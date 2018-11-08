@@ -10,6 +10,7 @@ const PHOTO_LIST_URL = "https://picsum.photos/list";
 class App extends Component {
   // 1. Declare a state object that will be used to track an array of photos
   state = {
+    photos: []
   }
 
   // 2. Declare a life cycle method
@@ -17,6 +18,15 @@ class App extends Component {
   //  - will be called after the component is initially rendered
   // - will fetch an array of photos
   // - will add that array of photos to state once received
+
+  componentDidMount() {
+    fetch(PHOTO_LIST_URL)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({photos: data})
+      })
+  }
+
   render() {
     const { photos = [] } = this.state;
     return (
@@ -24,9 +34,7 @@ class App extends Component {
         <header>
           <h1>Photo Wall</h1>
           <p>
-            Start by reading App.jsx and completing the numbered steps.
-            Afterward, delete this paragraph. Then, open up App.css and
-            complete the instructions there.
+            
           </p>
         </header>
         <div className="collage">
