@@ -5,4 +5,22 @@ header, .collage {
     flex-wrap: wrap;
 }
 
+header {
+    top: 0;
+    position: sticky;
+    color: rebeccapurple;
+}
+
 /* 7. Write CSS rules that ensure that no more than 4 photos appear on a row */
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    max-width: 850px;
+}
+
+img {
+    margin: 5px;
+}

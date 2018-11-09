@@ -23,9 +23,12 @@ class App extends Component {
     fetch(PHOTO_LIST_URL)
       .then(res => res.json())
       .then(data => {
-        this.setState({photos: data})
+        this.setState({photos: data});
+        console.log(data);
       })
-  }
+
+      .catch(err => console.log(err));
+  };
 
   render() {
     const { photos = [] } = this.state;
