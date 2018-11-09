@@ -6,7 +6,6 @@ const PHOTO_URL = "https://picsum.photos/200?photo=";
 // This URL can be used to get an array of objects that contain information
 // about various photos.
 const PHOTO_LIST_URL = "https://picsum.photos/list";
-const id = photo.id;
 
 class App extends Component {
   // 1. Declare a state object that will be used to track an array of photos
@@ -47,8 +46,8 @@ class App extends Component {
               */}
             {photos.map( photo => 
                 <img alt={/* 3. Fill me in with the photo's filename */ photo.filename}
-                     key={/* 4. Fill me in with the photo's id */ id}
-                     src={/* 5. Fill me in with the photo's URL */ `${PHOTO_URL}${id}`}
+                     key={/* 4. Fill me in with the photo's id */ photo.id}
+                     src={/* 5. Fill me in with the photo's URL */ `${PHOTO_URL}${photo.id}`}
                 />
             )}
         </div>
